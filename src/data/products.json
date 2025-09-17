@@ -1,0 +1,34 @@
+[
+  {
+    "id": "sweatshirt-elephant",
+    "name": "Sweatshirt crew-neck",
+    "handle": "sweatshirt-elephant",
+    "image": "/images/new-1.jpg",
+    "price": "289 ZŁ",
+    "swatches": ["#ededed", "#b463f0", "#22c55e"]
+  },
+  {
+    "id": "sweatshirt-cherry",
+    "name": "Sweatshirt crew-neck",
+    "handle": "sweatshirt-cherry",
+    "image": "/images/new-2.jpg", 
+    "price": "289 ZŁ",
+    "swatches": ["#ededed", "#b463f0", "#22c55e"]
+  },
+  {
+    "id": "sweatshirt-music",
+    "name": "Sweatshirt crew-neck",
+    "handle": "sweatshirt-music",
+    "image": "/images/new-1.jpg",
+    "price": "289 ZŁ",
+    "swatches": ["#ededed", "#b463f0", "#22c55e"]
+  },
+  {
+    "id": "sweatshirt-mammoth",
+    "name": "Sweatshirt crew-neck",
+    "handle": "sweatshirt-mammoth",
+    "image": "/images/new-2.jpg",
+    "price": "289 ZŁ",
+    "swatches": ["#ededed", "#b463f0", "#22c55e"]
+  }
+]

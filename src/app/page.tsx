@@ -1,4 +1,6 @@
-import Image from 'next/image';
+import AnnouncementBar from '@/components/layout/AnnouncementBar';
+import Navbar from '@/components/layout/Navbar';
+import HeroSection from '@/components/HeroSection';
 import CategorySection from '@/components/CategorySection';
 import WhatsNewSection from '@/components/WhatsNewSection';
 import JoinOurGangSection from '@/components/JoinOurGangSection';
@@ -6,18 +8,15 @@ import ValuesText from '@/components/ValuesText';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white pb-20">
+      {/* Announcement Bar */}
+      <AnnouncementBar />
+
+      {/* Navbar */}
+      <Navbar />
+
       {/* Hero Section */}
-      <div className="relative w-full">
-        <Image
-          src="/images/hero-picture.jpg"
-          alt="Miauu Shop - Clothes that grow with your values"
-          width={1200}
-          height={600}
-          className="w-full h-auto object-cover"
-          priority
-        />
-      </div>
+      <HeroSection />
 
       {/* Category Section */}
       <CategorySection />

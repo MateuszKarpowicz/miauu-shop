@@ -1,11 +1,13 @@
+import SectionWrapper from './common/SectionWrapper';
+
 export default function ValuesText() {
   return (
-    <section className="py-8 bg-white">
-      <div className="container mx-auto px-4">
-        <p className="text-center text-gray-900 text-lg">
+    <SectionWrapper className="py-8">
+      <div className="border-t border-gray-200 pt-8">
+        <p className="text-center text-black text-lg font-medium">
           Clothes that grow with your values.
         </p>
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

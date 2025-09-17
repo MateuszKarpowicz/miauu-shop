@@ -16,8 +16,8 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
   return (
     <div className="fixed inset-0 z-50 bg-black bg-opacity-50" onClick={onClose}>
-      <div className="fixed right-0 top-0 h-full w-80 bg-white shadow-xl" onClick={(e) => e.stopPropagation()}>
-        <div className="p-6">
+      <div className="fixed right-0 top-0 h-screen w-screen sm:w-96 bg-white shadow-xl" onClick={(e) => e.stopPropagation()}>
+        <div className="p-6 h-full overflow-y-auto">
           {/* Close button */}
           <button
             onClick={onClose}

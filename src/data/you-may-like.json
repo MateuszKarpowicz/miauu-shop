@@ -1,0 +1,18 @@
+[
+  {
+    "id": "sweatshirt-cherry",
+    "handle": "sweatshirt-cherry",
+    "name": "Sweatshirt crew-neck",
+    "price": "289 ZŁ",
+    "image": "/images/new-2.jpg",
+    "swatches": ["#e5e5e5", "#b463f0", "#22c55e"]
+  },
+  {
+    "id": "sweatshirt-music",
+    "handle": "sweatshirt-music",
+    "name": "Sweatshirt crew-neck",
+    "price": "289 ZŁ",
+    "image": "/images/new-1.jpg",
+    "swatches": ["#e5e5e5", "#b463f0", "#22c55e"]
+  }
+]

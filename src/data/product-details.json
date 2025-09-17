@@ -1,0 +1,16 @@
+[
+  {
+    "id": "sweatshirt-elephant",
+    "handle": "sweatshirt-elephant",
+    "name": "SWEATSHIRT CREW-NECK DIGGY-DOO",
+    "price": "289 ZŁ",
+    "images": [
+      {
+        "url": "/images/new-1.jpg",
+        "alt": "SWEATSHIRT CREW-NECK DIGGY-DOO"
+      }
+    ],
+    "sizes": ["62|68", "74|80", "86|92", "98|104", "110|116"],
+    "colors": ["#e5e5e5", "#b463f0", "#22c55e"]
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "id": "view-all",
+    "name": "VIEW ALL",
+    "slug": "view-all",
+    "handle": "view-all",
+    "image": "/images/cat-sweatshirts.jpg"
+  },
+  {
+    "id": "t-shirts",
+    "name": "T-SHIRTS",
+    "slug": "t-shirts",
+    "handle": "t-shirts",
+    "image": "/images/cat-sweatshirts.jpg"
+  },
+  {
+    "id": "sweatshirts",
+    "name": "SWEATSHIRTS",
+    "slug": "sweatshirts",
+    "handle": "sweatshirts",
+    "image": "/images/cat-sweatshirts.jpg"
+  },
+  {
+    "id": "vests",
+    "name": "VESTS",
+    "slug": "vests",
+    "handle": "vests",
+    "image": "/images/cat-sweatshirts.jpg"
+  },
+  {
+    "id": "pants",
+    "name": "PANTS",
+    "slug": "pants",
+    "handle": "pants", 
+    "image": "/images/cat-pants.jpg"
+  }
+]

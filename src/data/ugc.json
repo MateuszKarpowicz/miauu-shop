@@ -1,0 +1,12 @@
+[
+  {
+    "id": "ugc-1",
+    "image": "/images/gang-1.jpg",
+    "alt": "Dziecko w brązowym swetrze z czerwonymi serduszkami"
+  },
+  {
+    "id": "ugc-2", 
+    "image": "/images/gang-2.jpg",
+    "alt": "Dziecko w białej czapce i żółtej koszuli"
+  }
+]
