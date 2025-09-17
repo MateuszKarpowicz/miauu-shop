@@ -8,7 +8,7 @@ import ValuesText from '@/components/ValuesText';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white pb-20">
+    <div className="min-h-screen bg-bg-page pb-20">
       {/* Announcement Bar */}
       <AnnouncementBar />
 

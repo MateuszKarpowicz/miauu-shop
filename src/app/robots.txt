@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://miauu-shop.pl/sitemap.xml

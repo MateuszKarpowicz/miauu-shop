@@ -16,12 +16,12 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
   return (
     <div className="fixed inset-0 z-50 bg-black bg-opacity-50" onClick={onClose}>
-      <div className="fixed right-0 top-0 h-screen w-screen sm:w-96 bg-white shadow-xl" onClick={(e) => e.stopPropagation()}>
+      <div className="fixed right-0 top-0 h-screen w-screen sm:w-96 bg-bg-section shadow-xl" onClick={(e) => e.stopPropagation()}>
         <div className="p-6 h-full overflow-y-auto">
           {/* Close button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+            className="absolute top-4 right-4 text-text-muted hover:text-text-primary"
           >
             ✕
           </button>
@@ -31,7 +31,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             {/* View All */}
             <Link
               href="/category"
-              className="block text-lg font-semibold text-gray-900 hover:text-gray-600"
+              className="block text-lg font-semibold text-text-primary hover:text-text-muted"
               onClick={onClose}
             >
               VIEW ALL
@@ -41,7 +41,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             <div className="space-y-4">
               <Link
                 href="/category/t-shirts"
-                className="block text-lg font-semibold text-gray-900 hover:text-gray-600"
+                className="block text-lg font-semibold text-text-primary hover:text-text-muted"
                 onClick={onClose}
               >
                 T-SHIRTS
@@ -49,7 +49,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               
               <Link
                 href="/category/sweatshirts"
-                className="block text-lg font-semibold text-gray-900 hover:text-gray-600"
+                className="block text-lg font-semibold text-text-primary hover:text-text-muted"
                 onClick={onClose}
               >
                 SWEATSHIRTS
@@ -57,7 +57,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               
               <Link
                 href="/category/vests"
-                className="block text-lg font-semibold text-gray-900 hover:text-gray-600"
+                className="block text-lg font-semibold text-text-primary hover:text-text-muted"
                 onClick={onClose}
               >
                 VESTS
@@ -65,7 +65,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               
               <Link
                 href="/category/pants"
-                className="block text-lg font-semibold text-gray-900 hover:text-gray-600"
+                className="block text-lg font-semibold text-text-primary hover:text-text-muted"
                 onClick={onClose}
               >
                 PANTS
@@ -73,28 +73,28 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             </div>
 
             {/* About Us - Accordion */}
-            <div className="border-t border-gray-200 pt-4">
+            <div className="border-t border-border-light pt-md">
               <button
                 onClick={() => setAboutOpen(!aboutOpen)}
                 className="flex items-center justify-between w-full text-left"
               >
-                <span className="text-lg font-semibold text-gray-900">About us</span>
-                <span className="text-gray-500 text-xl">
+                <span className="text-lg font-semibold text-text-primary">About us</span>
+                <span className="text-text-muted text-xl">
                   {aboutOpen ? '−' : '+'}
                 </span>
               </button>
               {aboutOpen && (
                 <div className="mt-4 space-y-2">
-                  <Link href="/about" className="block text-gray-600 hover:text-gray-900" onClick={onClose}>
+                  <Link href="/about" className="block text-text-muted hover:text-text-primary" onClick={onClose}>
                     O nas
                   </Link>
-                  <Link href="/about#mission" className="block text-gray-600 hover:text-gray-900" onClick={onClose}>
+                  <Link href="/about#mission" className="block text-text-muted hover:text-text-primary" onClick={onClose}>
                     Nasza misja
                   </Link>
-                  <Link href="/about#team" className="block text-gray-600 hover:text-gray-900" onClick={onClose}>
+                  <Link href="/about#team" className="block text-text-muted hover:text-text-primary" onClick={onClose}>
                     Zespół
                   </Link>
-                  <Link href="/about#contact" className="block text-gray-600 hover:text-gray-900" onClick={onClose}>
+                  <Link href="/about#contact" className="block text-text-muted hover:text-text-primary" onClick={onClose}>
                     Kontakt
                   </Link>
                 </div>
@@ -107,26 +107,26 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                 onClick={() => setHelpOpen(!helpOpen)}
                 className="flex items-center justify-between w-full text-left"
               >
-                <span className="text-lg font-semibold text-gray-900">Help</span>
-                <span className="text-gray-500 text-xl">
+                <span className="text-lg font-semibold text-text-primary">Help</span>
+                <span className="text-text-muted text-xl">
                   {helpOpen ? '−' : '+'}
                 </span>
               </button>
               {helpOpen && (
                 <div className="mt-4 space-y-2">
-                  <Link href="/help" className="block text-gray-600 hover:text-gray-900" onClick={onClose}>
+                  <Link href="/help" className="block text-text-muted hover:text-text-primary" onClick={onClose}>
                     Pomoc
                   </Link>
-                  <Link href="/help#faq" className="block text-gray-600 hover:text-gray-900" onClick={onClose}>
+                  <Link href="/help#faq" className="block text-text-muted hover:text-text-primary" onClick={onClose}>
                     FAQ
                   </Link>
-                  <Link href="/help#shipping" className="block text-gray-600 hover:text-gray-900" onClick={onClose}>
+                  <Link href="/help#shipping" className="block text-text-muted hover:text-text-primary" onClick={onClose}>
                     Dostawa
                   </Link>
-                  <Link href="/help#returns" className="block text-gray-600 hover:text-gray-900" onClick={onClose}>
+                  <Link href="/help#returns" className="block text-text-muted hover:text-text-primary" onClick={onClose}>
                     Zwroty
                   </Link>
-                  <Link href="/help#contact" className="block text-gray-600 hover:text-gray-900" onClick={onClose}>
+                  <Link href="/help#contact" className="block text-text-muted hover:text-text-primary" onClick={onClose}>
                     Kontakt
                   </Link>
                 </div>

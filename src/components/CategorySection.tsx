@@ -2,7 +2,7 @@ import Link from 'next/link';
 import SectionWrapper from './common/SectionWrapper';
 import SectionHeader from './common/SectionHeader';
 import MediaTile from './common/MediaTile';
-import UniformGrid from './common/UniformGrid';
+import CarouselBase from './common/CarouselBase';
 import categoriesData from '../data/categories.json';
 
 export default function CategorySection() {
@@ -10,21 +10,27 @@ export default function CategorySection() {
     <SectionWrapper>
       <SectionHeader>SORT BY CATEGORY</SectionHeader>
       
-      <UniformGrid>
+      <CarouselBase 
+        itemsPerView={2} 
+        showArrows={true}
+        showDots={true}
+        className="px-md"
+      >
         {categoriesData.map((category) => (
-          <Link
-            key={category.id}
-            href={`/category/${category.slug}`}
-            className="block"
-          >
-            <MediaTile
-              image={category.image}
-              title={category.name}
-              alt={`Kategoria ${category.name}`}
-            />
-          </Link>
+          <div key={category.id} className="px-sm">
+            <Link
+              href={`/category/${category.slug}`}
+              className="block"
+            >
+              <MediaTile
+                image={category.image}
+                title={category.name}
+                alt={`Kategoria ${category.name}`}
+              />
+            </Link>
+          </div>
         ))}
-      </UniformGrid>
+      </CarouselBase>
     </SectionWrapper>
   );
 }

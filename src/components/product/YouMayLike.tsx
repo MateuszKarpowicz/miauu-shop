@@ -2,18 +2,10 @@ import SectionWrapper from '../common/SectionWrapper';
 import SectionHeader from '../common/SectionHeader';
 import MediaTile from '../common/MediaTile';
 import UniformGrid from '../common/UniformGrid';
-
-interface Product {
-  id: string;
-  handle: string;
-  name: string;
-  price: string;
-  image: string;
-  swatches: string[];
-}
+import { RelatedProduct } from '@/lib/types';
 
 interface YouMayLikeProps {
-  products: Product[];
+  products: RelatedProduct[];
   className?: string;
 }
 
@@ -21,7 +13,7 @@ export default function YouMayLike({ products, className = '' }: YouMayLikeProps
   if (!products || products.length === 0) return null;
 
   return (
-    <SectionWrapper className={`py-6 ${className}`}>
+    <SectionWrapper className={`py-section-y ${className}`}>
       <SectionHeader>YOU MAY LIKE</SectionHeader>
       
       <UniformGrid>
@@ -31,7 +23,7 @@ export default function YouMayLike({ products, className = '' }: YouMayLikeProps
             image={product.image}
             title={product.name}
             price={product.price}
-            alt={product.name}
+            alt={product.image.alt}
             swatches={product.swatches}
             href={`/product/${product.handle}`}
           />

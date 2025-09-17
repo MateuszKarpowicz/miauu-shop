@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import AboutHelpSection from "@/components/layout/AboutHelpSection";
 import BottomBar from "@/components/layout/BottomBar";
+import { getHomeMetaTags } from "@/lib/utils/seo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,10 +15,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "miauu",
-  description: "miau miau miau!",
-};
+export const metadata: Metadata = getHomeMetaTags();
 
 export default function RootLayout({
   children,

@@ -14,7 +14,7 @@ export default function UniformGrid({
   const gridCols = columns === 2 ? 'grid-cols-2' : 'grid-cols-1';
   
   return (
-    <div className={`grid ${gridCols} gap-4 ${className}`}>
+    <div className={`grid ${gridCols} gap-tile-gap ${className}`}>
       {children}
     </div>
   );

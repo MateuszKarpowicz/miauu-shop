@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import Navbar from '@/components/layout/Navbar';
 import CategoryTopBar from '@/components/category/CategoryTopBar';
 import ProductGallery from '@/components/product/ProductGallery';
@@ -10,9 +9,10 @@ import ProductCTA from '@/components/product/ProductCTA';
 import ProductDetailsAccordion from '@/components/product/ProductDetailsAccordion';
 import MaterialsAccordion from '@/components/product/MaterialsAccordion';
 import YouMayLike from '@/components/product/YouMayLike';
-import categoriesData from '@/data/categories.json';
-import productDetailsData from '@/data/product-details.json';
-import youMayLikeData from '@/data/you-may-like.json';
+import { useCategories } from '@/lib/hooks/useCategories';
+import { useProduct } from '@/lib/hooks/useProduct';
+import { useProductActions } from '@/lib/hooks/useProductActions';
+import { useYouMayLike } from '@/lib/hooks/useYouMayLike';
 
 interface ProductPageProps {
   params: {
@@ -20,50 +20,36 @@ interface ProductPageProps {
   };
 }
 
+// Note: generateMetadata nie działa z 'use client', więc meta tagi będą w layout.tsx
+// W przyszłości można przenieść logikę do server component
+
 export default function ProductPage({ params }: ProductPageProps) {
   const { handle } = params;
-  const [selectedSize, setSelectedSize] = useState<string | null>(null);
-
-  // Prepare categories for CategoryTopBar
-  const categories = categoriesData.map(cat => ({
-    handle: cat.handle,
-    label: cat.name
-  }));
-
-  // Get product data (in real app, this would be fetched based on handle)
-  const product = productDetailsData[0]; // MVP: first product
-
-  const handleSizeSelect = (size: string) => {
-    setSelectedSize(size);
-  };
-
-  const handleAddToCart = () => {
-    // Mock add to cart functionality
-    console.log('Added to cart:', { product: product.name, size: selectedSize });
-    alert(`Dodano do koszyka: ${product.name} w rozmiarze ${selectedSize}`);
-  };
-
-  const handleSelectSize = () => {
-    // Scroll to size selector (optional)
-    const sizeSection = document.getElementById('size-selector');
-    if (sizeSection) {
-      sizeSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  
+  // Get data using custom hooks
+  const categories = useCategories();
+  const product = useProduct(handle);
+  const youMayLikeProducts = useYouMayLike();
+  const {
+    selectedSize,
+    handleSizeSelect,
+    handleAddToCart,
+    handleSelectSize
+  } = useProductActions();
 
   if (!product) {
     return (
-      <div className="min-h-screen bg-white pb-20">
+      <div className="min-h-screen bg-bg-page pb-20">
         <Navbar />
-        <div className="px-4 py-8 text-center">
-          <p>Produkt nie został znaleziony.</p>
+        <div className="px-md py-xl text-center">
+          <p className="text-text-muted">Produkt nie został znaleziony.</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-white pb-20">
+    <div className="min-h-screen bg-bg-page pb-20">
       {/* Navbar */}
       <Navbar />
 
@@ -81,8 +67,8 @@ export default function ProductPage({ params }: ProductPageProps) {
       />
 
       {/* Free Shipping Note */}
-      <div className="px-4 py-1">
-        <p className="text-sm text-gray-600 text-center">
+      <div className="px-md py-xs">
+        <p className="text-sm text-text-muted text-center">
           free shipping over 500zł
         </p>
       </div>
@@ -99,7 +85,7 @@ export default function ProductPage({ params }: ProductPageProps) {
       {/* Product CTA */}
       <ProductCTA
         selectedSize={selectedSize}
-        onAddToCart={handleAddToCart}
+        onAddToCart={() => handleAddToCart(product.name)}
         onSelectSize={handleSelectSize}
       />
 
@@ -110,7 +96,7 @@ export default function ProductPage({ params }: ProductPageProps) {
       <MaterialsAccordion />
 
       {/* You May Like */}
-      <YouMayLike products={youMayLikeData} />
+      <YouMayLike products={youMayLikeProducts} />
 
       {/* About Us & Help are handled by layout.tsx */}
     </div>

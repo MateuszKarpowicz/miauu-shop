@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { getImageSizes } from '@/lib/config/images';
 
 interface ImageWrapperProps {
   src: string;
@@ -7,6 +8,9 @@ interface ImageWrapperProps {
   className?: string;
   priority?: boolean;
   sizes?: string;
+  type?: 'hero' | 'tile' | 'logo' | 'icon' | 'carousel' | 'productGallery' | 'thumbnail';
+  width?: number;
+  height?: number;
 }
 
 export default function ImageWrapper({ 
@@ -14,17 +18,24 @@ export default function ImageWrapper({
   alt, 
   className = '', 
   priority = false,
-  sizes = '(max-width: 768px) 100vw, 50vw'
+  sizes,
+  type = 'tile',
+  width,
+  height
 }: ImageWrapperProps) {
+  const imageSizes = sizes || getImageSizes(type);
+  
   return (
     <div className={`relative overflow-hidden ${className}`}>
       <Image
         src={src}
         alt={alt}
-        fill
+        width={width}
+        height={height}
+        fill={!width || !height}
         className="object-cover"
         priority={priority}
-        sizes={sizes}
+        sizes={imageSizes}
       />
     </div>
   );
